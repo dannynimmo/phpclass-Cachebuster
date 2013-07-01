@@ -1,7 +1,14 @@
 Cachebuster
 ====================
 
-A tiny class for cachebusting resource files.
+A tiny class for cachebusting resource files. Once implemented, any change to a resource file will force the browser to re-cache said file.
+
+How it works
+------------
+
+The `getUrl` method will return the web path with the file's last modified timestamp appended, e.g. `getUrl('css/main.css')`
+might return `/css/main.1372620112.css`. The `RewriteRule` will strip out the timestamp and serve the file correctly, but
+browsers will believe the file to be unique. This is currently the method recommended by the [HTML5 Boilerplate team](https://github.com/h5bp/server-configs/blob/master/apache/README.md#cache-busting).
 
 Usage
 -----
