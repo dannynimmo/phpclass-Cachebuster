@@ -39,7 +39,7 @@ Usage
     ```php
     use DannyNimmo\Cachebuster;
     
-    $cachebuster = new DannyNimmo\Cachebuster();
+    $cachebuster = new Cachebuster();
     $cachebuster
         ->setFileRoot(dirname(__FILE__))
         ->setWebRoot('/subdir/');
