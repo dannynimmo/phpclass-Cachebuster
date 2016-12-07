@@ -25,9 +25,20 @@ Usage
     </IfModule>
     ```
 
-2. Include the class and initialise the roots:
+2. Add this project to your composer.json:
+
+    ```
+    "autoload": {
+        "psr-4": {
+            "DannyNimmo\\": "libraries/dannynimmo/phpclass-Cachebuster"
+        }
+    }
+    ```
+    
+3. Include the class and initialise the roots:
     ```php
-    require_once('Cachebuster.php');
+    use DannyNimmo\Cachebuster;
+    
     $cachebuster = new DannyNimmo\Cachebuster();
     $cachebuster
         ->setFileRoot(dirname(__FILE__))
