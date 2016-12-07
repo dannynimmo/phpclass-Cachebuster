@@ -24,6 +24,17 @@ Usage
 
     </IfModule>
     ```
+    
+    If you use NGINX is will look like the following
+    ```nginx
+    location ~ \.(js|css|png|jpg|gif)$ {
+        try_files $uri @rewriteassets;
+    }
+    
+    location @rewriteassets {
+        rewrite ^/(.+)\.(\d+)\.(.+)$ /$1.$3 last;
+    }
+    ```
 
 2. Include the class and initialise the roots:
     ```php
