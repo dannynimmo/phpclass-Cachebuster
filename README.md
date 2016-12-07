@@ -45,7 +45,7 @@ Usage
         ->setWebRoot('/subdir/');
     ```
     
-3. Use the `getUrl` method to include files:
+4. Use the `getUrl` method to include files:
     ```phtml
     <link rel="stylesheet" href="<?php echo $cachebuster->getUrl('css/main.css'); ?>">
     <script src="<?php echo $cachebuster->getUrl('js/main.js'); ?>"></script>
