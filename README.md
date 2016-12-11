@@ -36,16 +36,27 @@ Usage
     }
     ```
 
-2. Include the class and initialise the roots:
+2. Add this project to your composer.json:
+
+    ```
+    "autoload": {
+        "psr-4": {
+            "DannyNimmo\\": "libraries/dannynimmo/phpclass-Cachebuster"
+        }
+    }
+    ```
+    
+3. Include the class and initialise the roots:
     ```php
-    require_once('Cachebuster.php');
-    $cachebuster = new DannyNimmo\Cachebuster();
+    use DannyNimmo\Cachebuster;
+    
+    $cachebuster = new Cachebuster();
     $cachebuster
         ->setFileRoot(dirname(__FILE__))
         ->setWebRoot('/subdir/');
     ```
     
-3. Use the `getUrl` method to include files:
+4. Use the `getUrl` method to include files:
     ```phtml
     <link rel="stylesheet" href="<?php echo $cachebuster->getUrl('css/main.css'); ?>">
     <script src="<?php echo $cachebuster->getUrl('js/main.js'); ?>"></script>
